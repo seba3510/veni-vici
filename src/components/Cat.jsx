@@ -14,11 +14,11 @@ function Cat({ cat, isShown }) {
 
 					<section id="info">
 
-						<span>{cat.weight}</span>
+						<button>{cat.weight}</button>
 
-						<span>{cat.origin}</span>
+						<button>{cat.origin}</button>
 
-						<span>{cat.life_span}</span>
+						<button>{cat.life_span}</button>
 
 					</section>
 
