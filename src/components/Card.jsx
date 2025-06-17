@@ -2,7 +2,7 @@ import { Cat } from "./Cat.jsx";
 
 //========================================================
 
-function Card({ handleClick, image, isShown }) {
+function Card({ fetchImage, image, isShown, banAttribute }) {
 	//====================================================================
 
 	return (
@@ -19,9 +19,14 @@ function Card({ handleClick, image, isShown }) {
 				<Cat
 					cat={image}
 					isShown={isShown}
+					banAttribute={banAttribute}
 				/>
 
-				<button type="button" id="discover-btn" onClick={handleClick}>
+				<button
+					type="button"
+					id="discover-btn"
+					onClick={fetchImage}
+				>
 					🔀 Discover!
 				</button>
 			</header>

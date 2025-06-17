@@ -1,4 +1,9 @@
-function Cat({ cat, isShown }) {
+
+import { Button } from "./Button.jsx";
+
+//============================================================================
+
+function Cat({ cat, isShown, banAttribute }) {
 
 	return (
 
@@ -14,11 +19,23 @@ function Cat({ cat, isShown }) {
 
 					<section id="info">
 
-						<button>{cat.weight}</button>
+						<Button
+							buttonID="weight"
+							catAttribute={cat.weight}
+							handleClick={banAttribute}
+						/>
 
-						<button>{cat.origin}</button>
+						<Button
+							buttonID="origin"
+							catAttribute={cat.origin}
+							handleClick={banAttribute}
+						/>
 
-						<button>{cat.life_span}</button>
+						<Button
+							buttonID="life-span"
+							catAttribute={cat.life_span}
+							handleClick={banAttribute}
+						/>
 
 					</section>
 

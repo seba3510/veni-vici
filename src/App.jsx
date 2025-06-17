@@ -93,6 +93,16 @@ function App() {
 
 	//====================================================================
 
+	function banAttribute() {
+
+		alert("Hello, World!");
+
+	} // banAttribute()
+
+
+	//====================================================================
+
+
 	async function fetchImage() {
 
 		try {
@@ -151,10 +161,13 @@ function App() {
 	return (
 		<>
 			<Card
-				handleClick={fetchImage}
+				fetchImage={fetchImage}
 				image={image}
 				isShown={isShown}
+				banAttribute={banAttribute}
+
 			/>
+
 			<BanList />
 		</>
 	);
