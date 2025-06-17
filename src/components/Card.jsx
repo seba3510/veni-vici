@@ -2,7 +2,14 @@ import { Cat } from "./Cat.jsx";
 
 //========================================================
 
-function Card({ fetchImage, image, isShown, banAttribute }) {
+function Card(
+	{
+		fetchImage,
+		image,
+		isShown,
+		banAttribute
+	}) {
+
 	//====================================================================
 
 	return (

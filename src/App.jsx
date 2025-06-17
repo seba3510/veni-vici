@@ -1,3 +1,4 @@
+/* eslint-disable no-unexpected-multiline */
 import { useState } from 'react';
 
 //========================================================================
@@ -7,6 +8,10 @@ import { Card } from './components/Card.jsx';
 //========================================================================
 
 import { BanList } from './components/BanList.jsx';
+
+//========================================================================
+
+import { Button } from './components/Button.jsx';
 
 //========================================================================
 
@@ -49,6 +54,15 @@ function App() {
 		useState(false);
 
 	//====================================================================
+
+	const [
+		attribute,
+		setAttribute
+	] =
+		useState(null);
+
+	//====================================================================
+
 
 	function getRandomIndex(min, max) {
 
@@ -93,9 +107,8 @@ function App() {
 
 	//====================================================================
 
-	function banAttribute() {
+	function banAttribute(data) {
 
-		alert("Hello, World!");
 
 	} // banAttribute()
 
@@ -119,13 +132,15 @@ function App() {
 				await response.json();
 
 			const cats =
-				filterData(data);
+				filterData
+					(data);
 
 			const n =
 				cats.length - 1;
 
 			const randomIndex =
-				getRandomIndex(0, n);
+				getRandomIndex
+					(0, n);
 
 			const cat =
 				cats[randomIndex];
@@ -135,8 +150,6 @@ function App() {
 
 			setImage({
 				url: cat.url,
-				width: cat.width,
-				height: cat.height,
 				breed: cat.breeds,
 				origin: breed.origin,
 				life_span: breed.life_span,
@@ -164,8 +177,8 @@ function App() {
 				fetchImage={fetchImage}
 				image={image}
 				isShown={isShown}
+				attribute={attribute}
 				banAttribute={banAttribute}
-
 			/>
 
 			<BanList />

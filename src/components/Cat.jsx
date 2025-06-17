@@ -3,7 +3,12 @@ import { Button } from "./Button.jsx";
 
 //============================================================================
 
-function Cat({ cat, isShown, banAttribute }) {
+function Cat(
+	{
+		cat,
+		isShown,
+		banAttribute
+	}) {
 
 	return (
 
