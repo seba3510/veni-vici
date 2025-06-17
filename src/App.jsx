@@ -32,8 +32,6 @@ function App() {
 	] =
 		useState({
 			url: "",
-			width: "",
-			height: "",
 			breed: [],
 			origin: "",
 			life_span: "",
@@ -82,8 +80,6 @@ function App() {
 
 			return (
 				(cat.url) &&
-				(cat.width) &&
-				cat.height &&
 				(breed) &&
 				(breed.origin) &&
 				(breed.life_span) &&
