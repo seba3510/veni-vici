@@ -26,12 +26,20 @@ main {
 	background-color: rgba(0, 0, 0, 0.396);
 	grid-area: card;
 	width: 50vw;
-	height: 50vh;
+	height: 50%;
+}
+
+#card > header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 #discover-btn {
 	cursor: pointer;
-	width: 30%;
+	width: 15%;
+	margin-top: 2em;
 }
 
 #ban-list {
@@ -39,4 +47,28 @@ main {
 	flex-direction: column;
 	background-color: gray;
 	grid-area: ban-list;
+}
+
+#cat {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 0.2fr 0.2fr;
+}
+
+#cat img {
+	width: 50%;
+}
+
+#cat > #info {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#cat > div {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }

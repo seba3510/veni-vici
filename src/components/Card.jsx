@@ -1,6 +1,8 @@
+import { Cat } from "./Cat.jsx";
+
 //========================================================
 
-function Card({ handleClick }) {
+function Card({ handleClick, image }) {
 	//====================================================================
 
 	return (
@@ -14,12 +16,18 @@ function Card({ handleClick }) {
 
 				<p id="emojis">😺😹😻😼😽🙀😿😾</p>
 
+				<Cat
+					cat={image}
+				/>
+
 				<button type="button" id="discover-btn" onClick={handleClick}>
 					🔀 Discover!
 				</button>
 			</header>
+
 		</section>
 	);
+
 } // Card()
 
 //=====================================================================
