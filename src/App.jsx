@@ -2,6 +2,9 @@ import { useState } from 'react';
 
 //========================================================================
 
+import { Card } from './components/Card.jsx';
+
+//========================================================================
 
 import reactLogo from './assets/react.svg';
 
@@ -19,7 +22,7 @@ function App() {
 
   return (
     <>
-      <p>Hello, World!</p>
+      <Card />
     </>
   );
 

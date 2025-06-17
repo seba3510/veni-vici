@@ -1,0 +1,21 @@
+body {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	background-image: url("../assets/images/cats-background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 20%;
+	left: 25%;
+	background-color: rgba(0, 0, 0, 0.396);
+	width: 50%;
+	height: 50%;
+	font-size: 2em;
+}
