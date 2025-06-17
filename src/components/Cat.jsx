@@ -1,34 +1,48 @@
-function Cat({ cat }) {
+function Cat({ cat, isShown }) {
 
 	return (
 
 		<section id="cat">
 
-			<section id="info">
+			{(isShown) &&
 
-				<p>{cat.name}</p>
+				<>
 
-				<p>{cat.weight}</p>
+					<header>
+						{cat.name}
+					</header>
 
-				<p>{cat.origin}</p>
+					<section id="info">
 
-				<p>{cat.life_span}</p>
+						<span>{cat.weight}</span>
 
-			</section>
+						<span>{cat.origin}</span>
 
-			<div>
+						<span>{cat.life_span}</span>
 
-				<img
-					src={cat.url}
-					alt="This is a cat."
-				/>
+					</section>
 
-			</div>
+					<div>
+
+						<img
+							src={cat.url}
+							alt="This is a cat."
+						/>
+
+					</div>
+
+				</>
+
+			}
+
+
 
 		</section>
 
 	);
 
 } // Cat()
+
+//============================================================================
 
 export { Cat };

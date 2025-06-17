@@ -44,6 +44,14 @@ function App() {
 
 	//====================================================================
 
+	const [
+		isShown,
+		setIsShown
+	] =
+		useState(false);
+
+	//====================================================================
+
 	function getRandomIndex(min, max) {
 
 		const minCeiled =
@@ -76,11 +84,11 @@ function App() {
 				(cat.url) &&
 				(cat.width) &&
 				cat.height &&
-				breed &&
-				breed.origin &&
-				breed.life_span &&
-				breed.name &&
-				breed.weight?.metric
+				(breed) &&
+				(breed.origin) &&
+				(breed.life_span) &&
+				(breed.name) &&
+				(breed.weight?.metric)
 			);
 
 		}); // filter()
@@ -130,6 +138,8 @@ function App() {
 				weight: breed.weight.metric,
 			});
 
+			setIsShown(true);
+
 		} // try
 
 		catch (error) {
@@ -147,6 +157,7 @@ function App() {
 			<Card
 				handleClick={fetchImage}
 				image={image}
+				isShown={isShown}
 			/>
 			<BanList />
 		</>
