@@ -1,5 +1,21 @@
 function Card() {
 
+	function fetchImage() {
+
+		const button =
+			document.querySelector
+				("#discover-btn");
+
+		button.addEventListener("click", () => {
+
+			alert("You have clicked me!");
+
+		}); // addEventListener()
+
+
+	} // fetchImage()
+
+	//====================================================================
 
 	return (
 
@@ -15,6 +31,7 @@ function Card() {
 			<button
 				type="button"
 				id="discover-btn"
+				onClick={fetchImage}
 			>
 				🔀
 				Discover!
