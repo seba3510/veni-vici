@@ -23,6 +23,8 @@ const root =
 
 createRoot(root).render(
   <StrictMode>
-    <App />
+    <main>
+      <App />
+    </main>
   </StrictMode>,
 );

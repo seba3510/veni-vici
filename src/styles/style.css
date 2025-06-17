@@ -1,28 +1,42 @@
 body {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	background-image: url("../assets/images/cats-background.jpg");
-	background-size: cover;
+	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
+main {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: 100vh;
+	grid-template-areas: "card ban-list";
+	/* height: 80vh; */
+}
+
 #card {
+	position: absolute;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	position: absolute;
+	gap: 20px;
 	top: 20%;
-	left: 25%;
+	left: 10%;
 	background-color: rgba(0, 0, 0, 0.396);
-	width: 50%;
-	height: 50%;
-	font-size: 2em;
-	color: white;
+	grid-area: card;
+	width: 50vw;
+	height: 50vh;
 }
 
 #discover-btn {
 	cursor: pointer;
-	background-color: rgba(0, 0, 0, 0.738);
-	color: white;
+	width: 20%;
+}
+
+#ban-list {
+	display: flex;
+	flex-direction: column;
+	background-color: gray;
+	grid-area: ban-list;
 }
