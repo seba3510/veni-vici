@@ -12,6 +12,14 @@ function Card() {
 				😺😹😻😼😽🙀😿😾
 			</p>
 
+			<button
+				type="button"
+				id="discover-btn"
+			>
+				🔀
+				Discover!
+			</button>
+
 		</section>
 
 	);

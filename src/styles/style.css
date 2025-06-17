@@ -18,4 +18,11 @@ body {
 	width: 50%;
 	height: 50%;
 	font-size: 2em;
+	color: white;
+}
+
+#discover-btn {
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.738);
+	color: white;
 }
