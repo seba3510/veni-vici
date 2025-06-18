@@ -1,4 +1,4 @@
-function History() {
+function History({ cats }) {
 
 	return (
 
@@ -6,10 +6,29 @@ function History() {
 
 			<h1>Who have we seen so far?</h1>
 
-			<section id="history"></section>
+			<section id="history">
+
+				{
+					cats.map((cat, index) => (
+
+						<section key={index}>
+							<img
+								src={cat.url}
+								alt="This is a cat"
+							/>
+
+							<p>{cat.description}</p>
+
+						</section>
+
+					)) // map()
+				}
+
+			</section>
 
 
 		</section>
+
 
 	);
 

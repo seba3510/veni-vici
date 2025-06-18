@@ -130,3 +130,16 @@ main {
 	background-color: var(--background-color);
 	width: 100%;
 }
+
+#history {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#history > section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 50%;
+}

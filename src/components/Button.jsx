@@ -5,7 +5,6 @@ function Button(
 		handleClick
 	}) {
 
-
 	const isWeight =
 		(buttonID === "weight");
 

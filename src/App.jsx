@@ -41,7 +41,8 @@ function App() {
 			origin: "",
 			life_span: "",
 			name: "",
-			weight: []
+			weight: [],
+			description: ""
 		});
 
 	//====================================================================
@@ -66,12 +67,7 @@ function App() {
 		history,
 		setHistory
 	] =
-		useState([
-			{
-				url: "",
-				description: ""
-			},
-		]);
+		useState([]);
 
 	//====================================================================
 
@@ -212,17 +208,33 @@ function App() {
 					(data);
 
 			const n =
-				cats.length - 1;
+				cats.length;
+
+			const min = 0;
+
+			const max =
+				n - 1;
 
 			const randomIndex =
 				getRandomIndex
-					(0, n);
+					(min, max);
 
 			const cat =
 				cats[randomIndex];
 
 			const breed =
 				cat.breeds[0];
+
+			setHistory(
+				(prev) =>
+					[
+						...prev,
+						{
+							url: cat.url,
+							description: breed.description
+						}
+					]
+			);
 
 			setImage({
 				url: cat.url,
@@ -231,21 +243,11 @@ function App() {
 				life_span: breed.life_span,
 				name: breed.name,
 				weight: breed.weight.metric,
+				description: breed.description
 			});
 
 			setIsShown(true);
 
-			setHistory(
-				(prev) =>
-
-					[
-						...prev,
-						{
-							url: cat.url,
-							description: breed.description
-						},
-					]
-			);
 
 		} // try
 
@@ -273,7 +275,9 @@ function App() {
 				attributes={bannedAttributes}
 			/>
 
-			<History />
+			<History
+				cats={history}
+			/>
 
 		</>
 	);
