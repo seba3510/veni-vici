@@ -63,6 +63,15 @@ function App() {
 
 	//====================================================================
 
+	const requestHeaders =
+	{
+		headers: {
+			"x-api-key": API_KEY,
+			"Content-Type": "application/json",
+		},
+	};
+
+	//====================================================================
 
 	function getRandomIndex(min, max) {
 
@@ -107,14 +116,13 @@ function App() {
 
 	//====================================================================
 
-	function banAttribute(data) {
+	function banAttribute() {
 
+		alert("Hello, World!");
 
 	} // banAttribute()
 
-
 	//====================================================================
-
 
 	async function fetchImage() {
 
@@ -122,11 +130,11 @@ function App() {
 
 			const
 				response =
-					await fetch(URL, {
-						headers: {
-							"x-api-key": API_KEY,
-						},
-					});
+					await fetch
+						(
+							URL,
+							requestHeaders
+						);
 
 			const data =
 				await response.json();
@@ -159,6 +167,8 @@ function App() {
 
 			setIsShown(true);
 
+			return cats;
+
 		} // try
 
 		catch (error) {
@@ -167,12 +177,13 @@ function App() {
 
 		} // catch
 
-	} // App()
+	} // fetchImage()
 
 	//====================================================================
 
 	return (
 		<>
+
 			<Card
 				fetchImage={fetchImage}
 				image={image}
@@ -182,11 +193,11 @@ function App() {
 			/>
 
 			<BanList />
+
 		</>
 	);
 
 } // App()
-
 
 //========================================================================
 

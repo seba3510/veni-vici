@@ -2,7 +2,7 @@ import { Button } from "./Button.jsx";
 
 //================================================================
 
-function BanList() {
+function BanList({ attributes }) {
 
 	return (
 

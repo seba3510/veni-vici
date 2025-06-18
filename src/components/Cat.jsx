@@ -57,8 +57,6 @@ function Cat(
 
 			}
 
-
-
 		</section>
 
 	);
