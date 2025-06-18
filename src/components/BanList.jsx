@@ -14,6 +14,18 @@ function BanList({ attributes }) {
 
 			<section id="attributes">
 
+				{
+
+					attributes.map((attribute, index) => (
+
+						<button
+							key={index}
+						>
+							{attribute}
+						</button>
+
+					))}
+
 			</section>
 
 		</section>

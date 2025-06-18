@@ -71,6 +71,15 @@ function App() {
 
 	//====================================================================
 
+	const [
+		bannedAttributes,
+		setBannedAttributes
+	] =
+		useState([]);
+
+	//====================================================================
+
+
 	const requestHeaders =
 	{
 		headers: {
@@ -132,6 +141,13 @@ function App() {
 
 		alert(message);
 
+		setBannedAttributes(
+			(prev) =>
+				[...prev,
+					attribute
+				]
+		);
+
 	} // banAttribute()
 
 	//====================================================================
@@ -179,8 +195,6 @@ function App() {
 
 			setIsShown(true);
 
-			setImages(cats);
-
 		} // try
 
 		catch (error) {
@@ -189,33 +203,7 @@ function App() {
 
 		} // catch
 
-	} // fetchImage()
-
-	//====================================================================
-
-	function getRandomImage() {
-
-		const cats =
-			fetchImages();
-
-		setImages(cats);
-
-		const min = 0;
-
-		const max =
-			images.length
-			- 1;
-
-		const index =
-			getRandomIndex
-				(min, max);
-
-		const value =
-			images[index];
-
-		setImage(value);
-
-	} // getRandomImage()
+	} // fetchImages()
 
 	//====================================================================
 
@@ -223,14 +211,15 @@ function App() {
 		<>
 
 			<Card
-				fetchImage={getRandomImage}
+				fetchImage={fetchImages}
 				image={image}
 				isShown={isShown}
 				attribute={attribute}
 				banAttribute={banAttribute}
 			/>
 
-			<BanList />
+			<BanList
+				attributes={bannedAttributes} />
 
 		</>
 	);
