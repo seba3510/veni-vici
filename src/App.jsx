@@ -11,10 +11,6 @@ import { BanList } from './components/BanList.jsx';
 
 //========================================================================
 
-import { Button } from './components/Button.jsx';
-
-//========================================================================
-
 import "./styles/style.css";
 
 //========================================================================
@@ -32,14 +28,6 @@ function App() {
 	//====================================================================
 
 	const [
-		images,
-		setImages
-	] =
-		useState([]);
-
-	//====================================================================
-
-	const [
 		image,
 		setImage
 	] =
@@ -50,7 +38,6 @@ function App() {
 			life_span: "",
 			name: "",
 			weight: []
-
 		});
 
 	//====================================================================
@@ -60,14 +47,6 @@ function App() {
 		setIsShown
 	] =
 		useState(false);
-
-	//====================================================================
-
-	const [
-		attribute,
-		setAttribute
-	] =
-		useState(null);
 
 	//====================================================================
 
@@ -111,7 +90,6 @@ function App() {
 
 	//====================================================================
 
-
 	function filterData(data) {
 
 		return data.filter((cat) => {
@@ -119,14 +97,25 @@ function App() {
 			const breed =
 				cat.breeds?.[0];
 
-			return (
+			const isDataValid =
 				(cat.url) &&
 				(breed) &&
 				(breed.origin) &&
 				(breed.life_span) &&
 				(breed.name) &&
-				(breed.weight?.metric)
-			);
+				(breed.weight?.metric);
+
+			if (!isDataValid) {
+
+				return false;
+
+			} // if
+
+			const areAttributeBanned =
+				checkBannedAttributes
+					(breed);
+
+			return areAttributeBanned;
 
 		}); // filter()
 
@@ -134,12 +123,49 @@ function App() {
 
 	//====================================================================
 
+	function checkBannedAttributes(breed) {
+
+		const name =
+			breed.name;
+
+		const isNameIncluded =
+			bannedAttributes.includes
+				(name);
+
+		const origin =
+			breed.origin;
+
+		const isOriginIncluded =
+			bannedAttributes.includes
+				(origin);
+
+		const lifeSpan =
+			breed.life_span;
+
+		const isLifeSpanIncluded =
+			bannedAttributes.includes
+				(lifeSpan);
+
+		const weight =
+			breed.weight.metric;
+
+		const isWeightIncluded =
+			bannedAttributes.includes
+				(weight);
+
+		const areAttributeBanned =
+			(isNameIncluded) ||
+			(isOriginIncluded) ||
+			(isLifeSpanIncluded) ||
+			(isWeightIncluded);
+
+		return (!areAttributeBanned);
+
+	} // checkBannedAttributes()
+
+	//====================================================================
+
 	function banAttribute(attribute) {
-
-		const message =
-			`Selected Attribute: ${attribute}`;
-
-		alert(message);
 
 		setBannedAttributes(
 			(prev) =>
@@ -156,13 +182,11 @@ function App() {
 
 		try {
 
-			const
-				response =
-					await fetch
-						(
-							URL,
-							requestHeaders
-						);
+			const response =
+				await fetch(
+					URL,
+					requestHeaders
+				);
 
 			const data =
 				await response.json();
@@ -214,12 +238,12 @@ function App() {
 				fetchImage={fetchImages}
 				image={image}
 				isShown={isShown}
-				attribute={attribute}
 				banAttribute={banAttribute}
 			/>
 
 			<BanList
-				attributes={bannedAttributes} />
+				attributes={bannedAttributes}
+			/>
 
 		</>
 	);
