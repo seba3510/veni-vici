@@ -11,6 +11,10 @@ import { BanList } from './components/BanList.jsx';
 
 //========================================================================
 
+import { History } from './components/History.jsx';
+
+//========================================================================
+
 import "./styles/style.css";
 
 //========================================================================
@@ -244,6 +248,8 @@ function App() {
 			<BanList
 				attributes={bannedAttributes}
 			/>
+
+			<History />
 
 		</>
 	);

@@ -1,3 +1,7 @@
+:root {
+	--background-color: rgba(0, 0, 0, 0.396);
+}
+
 body {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	background-image: url("../assets/images/cats-background.jpg");
@@ -8,9 +12,9 @@ body {
 
 main {
 	display: grid;
-	grid-template-columns: 2fr 1fr;
+	grid-template-columns: 0.3fr 1fr 0.5fr;
 	grid-template-rows: 100vh;
-	grid-template-areas: "card ban-list";
+	grid-template-areas: "history card ban-list";
 }
 
 #card {
@@ -21,10 +25,10 @@ main {
 	align-items: center;
 	gap: 20px;
 	top: 20%;
-	left: 10%;
-	background-color: rgba(0, 0, 0, 0.396);
+	left: 30%;
+	background-color: var(--background-color);
 	grid-area: card;
-	width: 50vw;
+	width: 32vw;
 	min-height: 50%;
 	max-height: 80%;
 	padding-top: 2em;
@@ -110,9 +114,17 @@ main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	width: 100%;
 }
 
 #ban-list > #attributes {
 	display: flex;
 	flex-direction: column;
+}
+
+#history {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--background-color);
+	width: 100%;
 }
