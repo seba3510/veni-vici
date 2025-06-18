@@ -102,6 +102,7 @@ function App() {
 
 	//====================================================================
 
+
 	function filterData(data) {
 
 		return data.filter((cat) => {
@@ -124,9 +125,12 @@ function App() {
 
 	//====================================================================
 
-	function banAttribute() {
+	function banAttribute(attribute) {
 
-		alert("Hello, World!");
+		const message =
+			`Selected Attribute: ${attribute}`;
+
+		alert(message);
 
 	} // banAttribute()
 

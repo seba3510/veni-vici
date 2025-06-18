@@ -9,24 +9,25 @@ function Button(
 	const isWeight =
 		(buttonID === "weight");
 
+	//=========================================================
+
 	return (
 
 		<>
 
-			{(isWeight) ? (
-				<button
-					id={buttonID}
-					onClick={handleClick}>
-					{catAttribute} lbs
-				</button>
-			) : (
-				<button
-					id={buttonID}
-					onClick={handleClick}
-				>
-					{catAttribute}
-				</button>
-			)}
+			<button
+				id={buttonID}
+				onClick={() => handleClick(catAttribute)}
+			>
+
+				{
+					(isWeight) ? `${catAttribute} lbs`
+						: catAttribute
+				}
+
+			</button>
+
+
 		</>
 
 	);
