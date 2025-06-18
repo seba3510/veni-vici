@@ -62,6 +62,18 @@ function App() {
 
 	//====================================================================
 
+	const [
+		history,
+		setHistory
+	] =
+		useState([
+			{
+				url: "",
+				description: ""
+			},
+		]);
+
+	//====================================================================
 
 	const requestHeaders =
 	{
@@ -222,6 +234,18 @@ function App() {
 			});
 
 			setIsShown(true);
+
+			setHistory(
+				(prev) =>
+
+					[
+						...prev,
+						{
+							url: cat.url,
+							description: breed.description
+						},
+					]
+			);
 
 		} // try
 
