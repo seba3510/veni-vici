@@ -32,6 +32,14 @@ function App() {
 	//====================================================================
 
 	const [
+		images,
+		setImages
+	] =
+		useState([]);
+
+	//====================================================================
+
+	const [
 		image,
 		setImage
 	] =
@@ -124,7 +132,7 @@ function App() {
 
 	//====================================================================
 
-	async function fetchImage() {
+	async function fetchImages() {
 
 		try {
 
@@ -167,7 +175,7 @@ function App() {
 
 			setIsShown(true);
 
-			return cats;
+			setImages(cats);
 
 		} // try
 
@@ -181,11 +189,37 @@ function App() {
 
 	//====================================================================
 
+	function getRandomImage() {
+
+		const cats =
+			fetchImages();
+
+		setImages(cats);
+
+		const min = 0;
+
+		const max =
+			images.length
+			- 1;
+
+		const index =
+			getRandomIndex
+				(min, max);
+
+		const value =
+			images[index];
+
+		setImage(value);
+
+	} // getRandomImage()
+
+	//====================================================================
+
 	return (
 		<>
 
 			<Card
-				fetchImage={fetchImage}
+				fetchImage={getRandomImage}
 				image={image}
 				isShown={isShown}
 				attribute={attribute}
