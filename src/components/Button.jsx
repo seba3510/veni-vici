@@ -8,6 +8,9 @@ function Button(
 	const isWeight =
 		(buttonID === "weight");
 
+	const isLifeSpan =
+		(buttonID === "life-span");
+
 	//=========================================================
 
 	return (
@@ -21,7 +24,8 @@ function Button(
 
 				{
 					(isWeight) ? `${catAttribute} lbs`
-						: catAttribute
+						: (isLifeSpan) ? `${catAttribute} years`
+							: catAttribute
 				}
 
 			</button>

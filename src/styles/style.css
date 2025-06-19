@@ -1,5 +1,6 @@
 :root {
 	--background-color: rgba(0, 0, 0, 0.396);
+	--button-background-color: rgb(216, 146, 54);
 }
 
 body {
@@ -33,6 +34,7 @@ main {
 	max-height: 80%;
 	padding-top: 2em;
 	padding-bottom: 2em;
+	color: white;
 }
 
 #card > header {
@@ -45,9 +47,16 @@ main {
 
 #discover-btn {
 	cursor: pointer;
-	width: 10vw;
-	height: auto;
+	width: 12vw;
+	height: 5vh;
+	/* height: 50%; */
 	margin-top: 2em;
+	-webkit-box-shadow: 5px 7px 15px 5px #1a1914;
+	box-shadow: 5px 7px 15px 5px #1a1914;
+	background-color: rgb(0, 0, 0);
+	color: white;
+	border: 2px solid #9cada4;
+	border-radius: 30px;
 }
 
 #ban-list {
@@ -62,11 +71,11 @@ main {
 	grid-template-columns: 1fr;
 	grid-template-rows: 0.2fr 0.2fr;
 	width: 50vw;
+	color: white;
 }
 
 #cat img {
 	width: 40%;
-	/* width: 50%; */
 	margin-top: 1.2em;
 }
 
@@ -97,11 +106,14 @@ main {
 
 #info > button {
 	border-radius: 50px;
-	background-color: rgb(156, 105, 40);
+	background-color: rgb(216, 163, 16);
 	text-align: center;
 	cursor: pointer;
 	border: none;
+	height: 5vh;
 	/* width: 100vw; */
+	-webkit-box-shadow: 5px 1px 0px 3px rgb(216, 163, 16);
+	box-shadow: 5px 1px 0px 3px solid rgb(216, 163, 16);
 }
 
 #info > button:nth-child(odd) {
@@ -119,6 +131,14 @@ main {
 	width: 100%;
 }
 
+#attributes > button {
+	background-color: rgba(191, 100, 100, 0.691);
+	margin-top: 1em;
+	border: none;
+	width: 3vw;
+	padding: 0.5em;
+}
+
 #ban-list > #attributes {
 	display: flex;
 	flex-direction: column;
@@ -127,19 +147,26 @@ main {
 #history-container {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	background-color: var(--background-color);
-	width: 100%;
+	width: 20vw;
+	overflow-y: scroll;
+	color: white;
 }
 
 #history {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 }
 
 #history > section {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	width: 50%;
+	width: 60%;
+	font-size: 0.8em;
+	border: 4px solid blue;
+	margin-top: 2em;
+	padding: 1em;
 }
