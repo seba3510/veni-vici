@@ -52,7 +52,7 @@ main {
 #discover-btn {
 	cursor: pointer;
 	width: 12vw;
-	height: 5vh;
+	min-height: 8vh;
 	margin-top: 2em;
 	-webkit-box-shadow: 5px 7px 15px 5px #1a1914;
 	box-shadow: 5px 7px 15px 5px #1a1914;

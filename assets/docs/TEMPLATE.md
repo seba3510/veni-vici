@@ -21,7 +21,7 @@ The following **required** functionality is completed:
     -   Note: Repeat results are permitted but the API used should have a reasonably large amount of data and repeats should not be frequent
 -   [ ] **Clicking on a displayed value for one attribute adds it to a displayed ban **list\*\*
     -   At least one attribute for each API result should be clickable
-    -   Clicking on a clickable attribute not on the ban list, should imnmediately add it to the ban list
+    -   Clicking on a clickable attribute not on the ban list, should immediately add it to the ban list
     -   Clicking on an attribute in the ban list should immediately remove it from the ban list
 -   [ ] **Attributes on the ban list prevent further images/API results with that attribute from being displayed**
     -   Clicking on the API call button should not result in any image/attributes with attribute values in the ban list being displayed (ex. Using a cat API, if the ban list includes the value 'Siberian' for the breed attribute, clicking on the Discover button should never result in a Siberian cat being displayed)

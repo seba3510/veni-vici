@@ -72,6 +72,14 @@ function App() {
 
 	//====================================================================
 
+	const [
+		index,
+		setIndex
+	] =
+		useState(0);
+
+	//====================================================================
+
 	const requestHeaders =
 	{
 		headers: {
@@ -187,9 +195,41 @@ function App() {
 				]
 		);
 
+		setIndex(index + 1);
+
 	} // banAttribute()
+	//====================================================================
+
+	function filterAttributes(attributes, attribute) {
+
+		return attributes.filter(
+
+			(elem) =>
+				(elem !== attribute)
+
+		); // filter()
+
+	} // filterAttributes()
+
 
 	//====================================================================
+
+	function unbanAttribute(attribute) {
+
+		const filteredAttributes =
+			filterAttributes(
+				bannedAttributes,
+				attribute
+			);
+
+		setBannedAttributes(
+			filteredAttributes
+		);
+
+	} // removeBannedAttribute()
+
+	//====================================================================
+
 
 	async function fetchImages() {
 
@@ -273,6 +313,7 @@ function App() {
 
 			<BanList
 				attributes={bannedAttributes}
+				removeAttribute={unbanAttribute}
 			/>
 
 			<History

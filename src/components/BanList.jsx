@@ -2,7 +2,7 @@ import { Button } from "./Button.jsx";
 
 //================================================================
 
-function BanList({ attributes }) {
+function BanList({ attributes, removeAttribute }) {
 
 	return (
 
@@ -20,6 +20,7 @@ function BanList({ attributes }) {
 
 						<button
 							key={index}
+							onClick={() => removeAttribute(attribute)}
 						>
 							{attribute}
 						</button>
