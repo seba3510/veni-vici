@@ -188,6 +188,22 @@ function App() {
 
 	function banAttribute(attribute) {
 
+		const isIncluded =
+			bannedAttributes
+				.includes(attribute);
+
+		if (isIncluded) {
+
+			const message =
+				"This attribute has already " +
+				"been banned!";
+
+			alert(message);
+
+			return;
+
+		} // if
+
 		setBannedAttributes(
 			(prev) =>
 				[...prev,
@@ -210,7 +226,6 @@ function App() {
 		); // filter()
 
 	} // filterAttributes()
-
 
 	//====================================================================
 
