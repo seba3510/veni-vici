@@ -21,12 +21,13 @@ import "./styles/style.css";
 
 function App() {
 
-	const API_KEY =
-		"live_n7R5WIIdObsEs2l67kdw2PF25w1eseFpBXvSOKch7fXgl3oJfpv34VqwpF7A5ax1";
+	const apiKey =
+		import.meta.env
+			.VENI_VICI_API_KEY;
 
 	//====================================================================
 
-	const URL =
+	const url =
 		"https://api.thecatapi.com/v1/images/search?limit=50";
 
 	//====================================================================
@@ -74,7 +75,7 @@ function App() {
 	const requestHeaders =
 	{
 		headers: {
-			"x-api-key": API_KEY,
+			"x-api-key": apiKey,
 			"Content-Type": "application/json",
 		},
 	};
@@ -141,29 +142,29 @@ function App() {
 			breed.name;
 
 		const isNameIncluded =
-			bannedAttributes.includes
-				(name);
+			bannedAttributes
+				.includes(name);
 
 		const origin =
 			breed.origin;
 
 		const isOriginIncluded =
-			bannedAttributes.includes
-				(origin);
+			bannedAttributes
+				.includes(origin);
 
 		const lifeSpan =
 			breed.life_span;
 
 		const isLifeSpanIncluded =
-			bannedAttributes.includes
-				(lifeSpan);
+			bannedAttributes
+				.includes(lifeSpan);
 
 		const weight =
 			breed.weight.metric;
 
 		const isWeightIncluded =
-			bannedAttributes.includes
-				(weight);
+			bannedAttributes
+				.includes(weight);
 
 		const areAttributeBanned =
 			(isNameIncluded) ||
@@ -196,7 +197,7 @@ function App() {
 
 			const response =
 				await fetch(
-					URL,
+					url,
 					requestHeaders
 				);
 
@@ -247,7 +248,6 @@ function App() {
 			});
 
 			setIsShown(true);
-
 
 		} // try
 
