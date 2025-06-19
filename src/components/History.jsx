@@ -9,9 +9,11 @@ function History({ cats }) {
 			<section id="history">
 
 				{
+
 					cats.map((cat, index) => (
 
 						<section key={index}>
+
 							<img
 								src={cat.url}
 								alt="This is a cat"
@@ -22,13 +24,13 @@ function History({ cats }) {
 						</section>
 
 					)) // map()
+
 				}
 
 			</section>
 
 
 		</section>
-
 
 	);
 

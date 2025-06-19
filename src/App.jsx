@@ -72,14 +72,6 @@ function App() {
 
 	//====================================================================
 
-	const [
-		index,
-		setIndex
-	] =
-		useState(0);
-
-	//====================================================================
-
 	const requestHeaders =
 	{
 		headers: {
@@ -190,7 +182,9 @@ function App() {
 
 		const isIncluded =
 			bannedAttributes
-				.includes(attribute);
+				.includes(
+					attribute
+				);
 
 		if (isIncluded) {
 
@@ -210,8 +204,6 @@ function App() {
 					attribute
 				]
 		);
-
-		setIndex(index + 1);
 
 	} // banAttribute()
 	//====================================================================

@@ -14,7 +14,9 @@ function Card(
 
 	return (
 		<section id="card">
+
 			<header>
+
 				<h1>Veni Vici!</h1>
 
 				<p id="description">
@@ -36,9 +38,11 @@ function Card(
 				>
 					🔀 Discover!
 				</button>
+
 			</header>
 
 		</section>
+
 	);
 
 } // Card()

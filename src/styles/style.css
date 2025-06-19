@@ -69,6 +69,10 @@ main {
 	grid-area: ban-list;
 }
 
+#ban-list > p {
+	margin-top: 1em;
+}
+
 #cat {
 	display: grid;
 	grid-template-columns: 1fr;

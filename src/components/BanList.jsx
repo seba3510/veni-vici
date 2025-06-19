@@ -1,8 +1,8 @@
-import { Button } from "./Button.jsx";
-
-//================================================================
-
-function BanList({ attributes, removeAttribute }) {
+function BanList(
+	{
+		attributes,
+		removeAttribute
+	}) {
 
 	return (
 
