@@ -23,7 +23,7 @@ function App() {
 
 	const apiKey =
 		import.meta.env
-			.VENI_VICI_API_KEY;
+			.VITE_VENI_VICI_API_KEY;
 
 	//====================================================================
 
