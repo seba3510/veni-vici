@@ -206,6 +206,7 @@ function App() {
 		);
 
 	} // banAttribute()
+
 	//====================================================================
 
 	function filterAttributes(attributes, attribute) {
